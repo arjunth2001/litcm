@@ -914,8 +914,8 @@ class wxilp():
         self.i2u_ta = re.compile(u'([\xA1-\xFA])')
 
         #NOTE Handle pre-present iscii characters
-        self.iscii_num = dict(zip([unichr(i) for i in range(161, 251)], ['@~%s~@'%i for i in range(0, 90)]))
-        self.num_iscii = dict(zip(['@~%s~@'%i for i in range(0, 90)], [unichr(i) for i in range(161, 251)]))
+        self.iscii_num = dict(zip([chr(i) for i in range(161, 251)], ['@~%s~@'%i for i in range(0, 90)]))
+        self.num_iscii = dict(zip(['@~%s~@'%i for i in range(0, 90)], [chr(i) for i in range(161, 251)]))
         self.isc = re.compile(u'([\xA1-\xFA])')
         self.num = re.compile(u'(%s)' %'|'.join(['@~%s~@'%i for i in range(0, 90)]))
 
